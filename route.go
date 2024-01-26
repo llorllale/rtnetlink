@@ -144,7 +144,7 @@ func (r *RouteService) Delete(req *RouteMessage) error {
 
 // Get Route(s)
 func (r *RouteService) Get(req *RouteMessage) ([]RouteMessage, error) {
-	flags := netlink.Request | netlink.DumpFiltered
+	flags := netlink.Request | netlink.Dump
 	return r.execute(req, unix.RTM_GETROUTE, flags)
 }
 
